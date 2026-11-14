@@ -1,0 +1,58 @@
+{
+  "dataset": "nyc_yellow_taxi_duration",
+  "version": "v1",
+  "created_utc": "2026-11-14T23:21:02+00:00",
+  "source_file": "yellow_tripdata_2024-01.parquet",
+  "source_sha256": "c4d59da7bbc8abaeeeb1727947ee93d9891a71acb42854bd80db1571b2030510",
+  "rows_in_file": 2964624,
+  "sample_size": 200000,
+  "sample_seed": 42,
+  "cleaning_rules": {
+    "MIN_DURATION": 1,
+    "MAX_DURATION": 180,
+    "MIN_DISTANCE": 0,
+    "MAX_DISTANCE": 100,
+    "MAX_SPEED": 80,
+    "MIN_FARE": 0,
+    "PAX_MIN": 1,
+    "PAX_MAX": 6
+  },
+  "drop_log": [
+    {
+      "step": "pickup inside file month",
+      "rows_dropped": 2
+    },
+    {
+      "step": "duration in range",
+      "rows_dropped": 2483
+    },
+    {
+      "step": "distance in range",
+      "rows_dropped": 1
+    },
+    {
+      "step": "speed plausible",
+      "rows_dropped": 2
+    },
+    {
+      "step": "fare not negative",
+      "rows_dropped": 2277
+    }
+  ],
+  "split_rule": "pickup_day <= 24 -> train, else test",
+  "features": [
+    "pickup_hour",
+    "pickup_dow",
+    "PULocationID",
+    "DOLocationID",
+    "passenger_count",
+    "VendorID"
+  ],
+  "target": "duration_min",
+  "rows_clean": 195235,
+  "rows_train": 148620,
+  "rows_test": 46615,
+  "train_sha256": "e917ecd076a3fa9a4dd7d8d8f4c0a358a585d0baf0f27d32aa13010f7d2de587",
+  "test_sha256": "9a2bb2260937c0817d2868cbae6d7ca3bb08788274c3d4075993e99595eec740",
+  "sklearn_version": "1.8.0"
+}
