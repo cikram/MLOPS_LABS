@@ -1,0 +1,26 @@
+{
+  "model": "model_v1",
+  "created_utc": "2026-11-15T00:32:19+00:00",
+  "algorithm": "HistGradientBoostingRegressor",
+  "hyperparameters": {
+    "max_iter": 200,
+    "random_state": 42
+  },
+  "features": [
+    "pickup_hour",
+    "pickup_dow",
+    "PULocationID",
+    "DOLocationID",
+    "passenger_count",
+    "VendorID"
+  ],
+  "target": "duration_min",
+  "data_version": "v1",
+  "train_data_sha256": "e917ecd076a3fa9a4dd7d8d8f4c0a358a585d0baf0f27d32aa13010f7d2de587",
+  "test_data_sha256": "9a2bb2260937c0817d2868cbae6d7ca3bb08788274c3d4075993e99595eec740",
+  "test_mae_min": 5.024,
+  "baseline_mae_min": 7.722,
+  "baseline_method": "DummyRegressor(strategy='median'), fitted on the train set, ignores features",
+  "sklearn_version": "1.8.0",
+  "model_sha256": "609a2e36f1f33f00e991d8c122a81f0e766723916e53a7e1d775bd8490317dfc"
+}
