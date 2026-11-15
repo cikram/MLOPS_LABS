@@ -1,2 +1,19 @@
 dvc-storage/
 lab1/data_dictionary_trip_records_yellow.pdf
+
+
+# Airflow (généré à l'exécution)
+lab1/airflow/logs/
+lab1/airflow/config/
+lab1/airflow/plugins/
+lab1/airflow/.env
+lab1/airflow/.venv/
+
+# Alertes générées par run_monitor
+lab1/artifacts/alerts.log
+
+# Python
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
